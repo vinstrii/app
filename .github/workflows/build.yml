@@ -40,3 +40,7 @@ jobs:
         with:
           name: package
           path: ${{ steps.buildozer.outputs.filename }}
+
+      # Splitting the build logs
+      - name: Split build logs
+        run: tail -n +1 -q *.log > full_build.log
